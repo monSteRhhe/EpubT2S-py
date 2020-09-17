@@ -5,6 +5,10 @@
 
 ~~不知道有没有问题。~~
 
+epub文件名字中不能带有空格。
+
+> 隔壁的简中转繁中 [EpubS2T-py](https://github.com/monSteRhhe/EpubS2T-py)
+
 ## 使用
 
 安装 Python3
