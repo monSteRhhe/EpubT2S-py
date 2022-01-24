@@ -62,13 +62,19 @@ def epubt2s():
         os.system(CCcmd)
 
     # 打包文件夹为Epub
-    zipf = zipfile.ZipFile(current_path + '/' + s_foldername, 'w', zipfile.ZIP_DEFLATED)
+    def zipDir(dirpath,outFullName):
+        zip = zipfile.ZipFile(outFullName,"w",zipfile.ZIP_DEFLATED)
+        for path,dirnames,filenames in os.walk(dirpath):
+            # 去掉目标根路径，只对目标文件夹下边的文件及文件夹进行压缩
+            fpath = path.replace(dirpath,'')
 
-    for file in filelist:
-        zipf.write(file)
+            for filename in filenames:
+                zip.write(os.path.join(path,filename),os.path.join(fpath,filename))
+        zip.close()
 
-    zipf.close()
-    
+    zipDir(s_folder, current_path + '/' + s_foldername)
+
+
     shutil.rmtree(s_folder)
 
 _thread.start_new_thread(epubt2s, ())
