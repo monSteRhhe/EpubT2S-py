@@ -2,7 +2,7 @@ import os, shutil , _thread, zipfile
 from tkinter import *
 from tkinter import filedialog
 from opencc import OpenCC
-
+#  test
 def epubt2s():
     root = Tk()
     root.withdraw()
