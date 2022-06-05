@@ -16,3 +16,5 @@ epub文件名字中不能带有空格。
 `pip install opencc-python-reimplemented`
 
 运行 `EpubT2S.py`
+    
+感谢 [hheng101](https://github.com/hheng101) 大佬的修改。
